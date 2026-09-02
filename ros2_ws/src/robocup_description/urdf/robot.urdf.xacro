@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robocup_robot">
+
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.5 0.4 0.15"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <geometry>
+        <box size="0.5 0.4 0.15"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="10.0"/>
+      <origin xyz="0 0 0"/>
+      <inertia
+        ixx="0.15" ixy="0" ixz="0"
+        iyy="0.2" iyz="0"
+        izz="0.25"/>
+    </inertial>
+  </link>
+
+</robot>
