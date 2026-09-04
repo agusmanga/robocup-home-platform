@@ -1,35 +1,80 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robocup_robot">
 
-  <link name="base_link_footprint"/>
+  <link name="base_footprint"/>
 
   <joint name="base_joint" type="fixed">
-    <parent link="base_link_footprint"/>
+    <parent link="base_footprint"/>
     <child link="base_link"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="0 0 0.10" rpy="0 0 0"/>
   </joint>
 
   <link name="base_link">
     <visual>
       <geometry>
-        <box size="0.5 0.4 0.15"/>
+        <box size="0.6 0.48 0.2"/>
       </geometry>
     </visual>
 
     <collision>
       <geometry>
-        <box size="0.5 0.4 0.15"/>
+        <box size="0.6 0.48 0.2"/>
       </geometry>
     </collision>
 
     <inertial>
-      <mass value="10.0"/>
+      <mass value="13.96"/>
       <origin xyz="0 0 0"/>
       <inertia
-        ixx="0.15" ixy="0" ixz="0"
-        iyy="0.2" iyz="0"
-        izz="0.25"/>
+        ixx="0.315" ixy="0" ixz="0"
+        iyy="0.466" iyz="0"
+        izz="0.687"/>
     </inertial>
   </link>
+
+  <xacro:macro name="wheel" params="name parent origin">
+    <link name="${name}">
+      <visual>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+          <cylinder radius="0.075" length="0.05"/>
+        </geometry>
+        <material name="white">
+          <color rgba="1 1 1 1"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+          <cylinder radius="0.075" length="0.05"/>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <mass value="0.975"/>
+        <origin xyz="0 0 0"/>
+       <inertia
+          ixx="0.001574"
+          ixy="0"
+          ixz="0"
+          iyy="0.002742"
+          iyz="0"
+          izz="0.001574"/>
+      </inertial>
+    </link>
+
+    <joint name="${name}_joint" type="continuous">
+      <parent link="${parent}"/>
+      <child link="${name}"/>
+      <origin xyz="${origin}" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:wheel name="rear_left_wheel" parent="base_link" origin="-0.275 0.265 -0.030"/>
+  <xacro:wheel name="rear_right_wheel" parent="base_link" origin="-0.275 -0.265 -0.030"/>
+  <xacro:wheel name="front_left_wheel" parent="base_link" origin="0.275 0.265 -0.03"/>
+  <xacro:wheel name="front_right_wheel" parent="base_link" origin="0.275 -0.265 -0.03"/>
+
 
 </robot>
