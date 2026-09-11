@@ -1,4 +1,5 @@
 #include "../include/robocup_hardware/gazebo-hardware.hpp"
+#include <cstddef>
 #include <gz/sim/Types.hh>
 #include <gz/sim/components/JointVelocity.hh>
 #include <hardware_interface/handle.hpp>
@@ -53,21 +54,20 @@ bool GazeboHardware::initSim(
     wheel_entities_.emplace_back(it->second);
   }
 
-  auto entity = wheel_entities_[0];
+  for (const auto entity : wheel_entities_) {
 
-  if (!ecm_->Component<sim::components::JointPosition>(entity)) {
-    ecm_->CreateComponent(entity, sim::components::JointPosition({0.0}));
+    if (!ecm_->Component<sim::components::JointPosition>(entity)) {
+      ecm_->CreateComponent(entity, sim::components::JointPosition({0.0}));
+    }
+
+    if (!ecm_->Component<sim::components::JointVelocity>(entity)) {
+      ecm_->CreateComponent(entity, sim::components::JointVelocity({0.0}));
+    }
+    ecm_->CreateComponent(entity, sim::components::JointVelocityCmd({0.0}));
   }
-
-  if (!ecm_->Component<sim::components::JointVelocity>(entity)) {
-    ecm_->CreateComponent(entity, sim::components::JointVelocity({0.0}));
-  }
-  ecm_->CreateComponent(wheel_entities_[0],
-                        sim::components::JointVelocityCmd({0.0}));
-
-  velocity_command_.resize(1, 0.0);
-  velocity_state_.resize(1, 0.0);
-  position_state_.resize(1, 0.0);
+  velocity_command_.resize(4, 0.0);
+  velocity_state_.resize(4, 0.0);
+  position_state_.resize(4, 0.0);
 
   return true;
 };
@@ -75,51 +75,64 @@ bool GazeboHardware::initSim(
 std::vector<hardware_interface::CommandInterface>
 GazeboHardware::export_command_interfaces() {
   std::vector<hardware_interface::CommandInterface> commands;
-  commands.emplace_back(info_.joints[0].name,
-                        hardware_interface::HW_IF_VELOCITY,
-                        &velocity_command_[0]);
+
+  for (size_t i = 0; i < info_.joints.size(); ++i) {
+    const auto &joint = info_.joints[i];
+    commands.emplace_back(joint.name, hardware_interface::HW_IF_VELOCITY,
+                          &velocity_command_[i]);
+  }
   return commands;
 };
 
 std::vector<hardware_interface::StateInterface>
 GazeboHardware::export_state_interfaces() {
   std::vector<hardware_interface::StateInterface> states;
-  states.emplace_back(info_.joints[0].name, hardware_interface::HW_IF_VELOCITY,
-                      &velocity_state_[0]);
-  states.emplace_back(info_.joints[0].name, hardware_interface::HW_IF_POSITION,
-                      &position_state_[0]);
+  for (size_t i = 0; i < info_.joints.size(); ++i) {
+    const auto &joint = info_.joints[i];
+
+    states.emplace_back(joint.name, hardware_interface::HW_IF_VELOCITY,
+                        &velocity_state_[i]);
+    states.emplace_back(joint.name, hardware_interface::HW_IF_POSITION,
+                        &position_state_[i]);
+  }
   return states;
 };
 
-hardware_interface::return_type
-GazeboHardware::read(const rclcpp::Time &time, const rclcpp::Duration &period) {
+hardware_interface::return_type GazeboHardware::read(const rclcpp::Time &,
+                                                     const rclcpp::Duration &) {
 
-  auto entity = wheel_entities_[0];
+  for (size_t i = 0; i < wheel_entities_.size(); ++i) {
 
-  auto pos_component = ecm_->Component<sim::components::JointPosition>(entity);
+    auto entity = wheel_entities_[i];
+    auto pos_component =
+        ecm_->Component<sim::components::JointPosition>(entity);
 
-  auto vel_component = ecm_->Component<sim::components::JointVelocity>(entity);
+    auto vel_component =
+        ecm_->Component<sim::components::JointVelocity>(entity);
 
-  if (pos_component->Data().empty() || vel_component->Data().empty()) {
-    return hardware_interface::return_type::OK;
+    if (pos_component->Data().empty() || vel_component->Data().empty()) {
+      return hardware_interface::return_type::OK;
+    }
+    position_state_[i] = pos_component->Data()[0];
+    velocity_state_[i] = vel_component->Data()[0];
   }
-  position_state_[0] = pos_component->Data()[0];
-  velocity_state_[0] = vel_component->Data()[0];
 
   return hardware_interface::return_type::OK;
 };
 
 hardware_interface::return_type
-GazeboHardware::write(const rclcpp::Time &time,
-                      const rclcpp::Duration &period) {
+GazeboHardware::write(const rclcpp::Time &, const rclcpp::Duration &) {
 
-  auto vel_component =
-      ecm_->Component<sim::components::JointVelocityCmd>(wheel_entities_[0]);
+  for (size_t i = 0; i < wheel_entities_.size(); ++i) {
+    auto entity = wheel_entities_[i];
+    auto vel_component =
+        ecm_->Component<sim::components::JointVelocityCmd>(entity);
 
-  std::vector<double> command = {velocity_command_[0]};
+    std::vector<double> command = {velocity_command_[i]};
 
-  if (!vel_component->Data().empty()) {
-    vel_component->Data()[0] = velocity_command_[0];
+    if (!vel_component->Data().empty()) {
+      vel_component->Data()[0] = velocity_command_[i];
+    }
   }
 
   return hardware_interface::return_type::OK;
