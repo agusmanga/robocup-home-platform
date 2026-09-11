@@ -1,0 +1,7 @@
+<library path="gazebo_hardware">
+  <class
+    name="robocup_hardware/GazeboHardware"
+    type="GazeboHardware"
+    base_class_type="gz_ros2_control::GazeboSimSystemInterface">
+  </class>
+</library>

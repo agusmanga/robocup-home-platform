@@ -11,10 +11,20 @@ def generate_launch_description():
     description_pkg = get_package_share_directory('robocup_description')
 
     ros_gz_sim_pkg = get_package_share_directory('ros_gz_sim')
+    bringup_pkg = get_package_share_directory('robocup_bringup')
+
+    controllers_file = os.path.join(
+        bringup_pkg,
+        'config',
+        'gazebo_hardware_controllers.yaml'
+    )
+    
 
     xacro_file = description_pkg + '/urdf/robot.urdf.xacro'
 
-    robot_description = xacro.process_file(xacro_file).toxml()
+    robot_description = xacro.process_file(xacro_file,mappings={
+        'controllers_file': controllers_file
+    }).toxml()
 
     gazebo= IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -37,13 +47,17 @@ def generate_launch_description():
         output='screen',
             parameters=[{'robot_description': robot_description}]
         )
-
-    joint_state_publisher = Node(
-        package='joint_state_publisher',
-        executable='joint_state_publisher',
-        name='joint_state_publisher',
-        output='screen'
+    wheel_controller_spawner = Node(
+        package="controller_manager",
+    executable="spawner",
+    arguments=["wheel_velocity_controller"],
     )
+
+    joint_state_broadcaster_spawner = Node(
+    package="controller_manager",
+    executable="spawner",
+    arguments=["joint_state_broadcaster"],
+)
     robot = Node(
         package='ros_gz_sim',
         executable='create',
@@ -55,4 +69,5 @@ def generate_launch_description():
             '-z', '0.2'
         ]
     )
-    return LaunchDescription([rviz, gazebo, robot_state_publisher, joint_state_publisher, robot])
+    
+    return LaunchDescription([rviz, gazebo, robot_state_publisher, robot,wheel_controller_spawner,joint_state_broadcaster_spawner])
