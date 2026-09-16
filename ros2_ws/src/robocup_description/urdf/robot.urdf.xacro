@@ -86,9 +86,9 @@
       <surface>
         <friction>
           <ode>
-            <mu>0</mu>
+            <mu>1</mu>
             <mu2>0</mu2>
-            <fdir1 ignition:expressed_in="base_link">1.0 1.0 0.0</fdir1>
+            <fdir1 ignition:expressed_in="base_footprint">1.0 -1.0 0.0</fdir1>
           </ode>
         </friction>
       </surface>
@@ -99,9 +99,9 @@
       <surface>
         <friction>
           <ode>
-            <mu>0</mu>
+            <mu>1</mu>
             <mu2>0</mu2>
-            <fdir1 ignition:expressed_in="base_link">1.0 -1.0 0.0</fdir1>
+            <fdir1 ignition:expressed_in="base_footprint">1.0 1.0 0.0</fdir1>
           </ode>
         </friction>
       </surface>
@@ -112,9 +112,9 @@
       <surface>
         <friction>
           <ode>
-            <mu>0</mu>
+            <mu>1</mu>
             <mu2>0</mu2>
-            <fdir1 ignition:expressed_in="base_link">1.0 -1.0 0.0</fdir1>
+            <fdir1 ignition:expressed_in="base_footprint">1.0 1.0 0.0</fdir1>
           </ode>
         </friction>
       </surface>
@@ -125,9 +125,9 @@
       <surface>
         <friction>
           <ode>
-            <mu>0</mu>
+            <mu>1</mu>
             <mu2>0</mu2>
-            <fdir1 ignition:expressed_in="base_link">1.0 1.0 0.0</fdir1>
+            <fdir1 ignition:expressed_in="base_footprint">1.0 -1.0 0.0</fdir1>
           </ode>
         </friction>
       </surface>
