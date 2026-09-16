@@ -49,8 +49,11 @@ def generate_launch_description():
         )
     wheel_controller_spawner = Node(
         package="controller_manager",
-    executable="spawner",
-    arguments=["wheel_velocity_controller"],
+        executable="spawner",
+        arguments=['mecanum_drive_controller',
+            '--param-file',
+            controllers_file,
+        ]
     )
 
     joint_state_broadcaster_spawner = Node(

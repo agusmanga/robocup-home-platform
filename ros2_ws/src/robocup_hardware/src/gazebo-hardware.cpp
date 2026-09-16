@@ -2,6 +2,7 @@
 #include <cstddef>
 #include <gz/sim/Types.hh>
 #include <gz/sim/components/JointVelocity.hh>
+#include <gz/sim/components/JointVelocityCmd.hh>
 #include <hardware_interface/handle.hpp>
 #include <hardware_interface/types/hardware_interface_return_values.hpp>
 #include <hardware_interface/types/hardware_interface_type_values.hpp>
@@ -131,6 +132,8 @@ GazeboHardware::write(const rclcpp::Time &, const rclcpp::Duration &) {
     std::vector<double> command = {velocity_command_[i]};
 
     if (!vel_component->Data().empty()) {
+      ecm_->SetComponentData<sim::components::JointVelocityCmd>(
+          entity, {velocity_command_[i]});
       vel_component->Data()[0] = velocity_command_[i];
     }
   }

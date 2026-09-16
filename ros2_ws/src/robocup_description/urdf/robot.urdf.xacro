@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robocup_robot">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" xmlns:ignition="http://gazebosim.org/schema" name="robocup_robot">
 
   <link name="base_footprint"/>
 
   <joint name="base_joint" type="fixed">
     <parent link="base_footprint"/>
     <child link="base_link"/>
-    <origin xyz="0 0 0.10" rpy="0 0 0"/>
+    <origin xyz="0 0 0.1" rpy="0 0 0"/>
   </joint>
 
   <link name="base_link">
@@ -46,7 +46,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="1.5708 0 0"/>
         <geometry>
-          <cylinder radius="0.075" length="0.05"/>
+          <sphere radius="0.075" />
         </geometry>
       </collision>
 
@@ -67,15 +67,72 @@
       <parent link="${parent}"/>
       <child link="${name}"/>
       <origin xyz="${origin}" rpy="0 0 0"/>
+      <dynamics damping="0.2"/>
       <axis xyz="0 1 0"/>
     </joint>
   </xacro:macro>
 
-  <xacro:wheel name="rear_left_wheel" parent="base_link" origin="-0.275 0.265 -0.030"/>
-  <xacro:wheel name="rear_right_wheel" parent="base_link" origin="-0.275 -0.265 -0.030"/>
-  <xacro:wheel name="front_left_wheel" parent="base_link" origin="0.275 0.265 -0.03"/>
-  <xacro:wheel name="front_right_wheel" parent="base_link" origin="0.275 -0.265 -0.03"/>
+  <xacro:wheel name="rear_left_wheel" parent="base_link" origin="-0.275 0.265 -0.070"/>
+  <xacro:wheel name="rear_right_wheel" parent="base_link" origin="-0.275 -0.265 -0.070"/>
+  <xacro:wheel name="front_left_wheel" parent="base_link" origin="0.275 0.265 -0.07"/>
+  <xacro:wheel name="front_right_wheel" parent="base_link" origin="0.275 -0.265 -0.07"/>
 
+
+
+  <!-- To emulate Mecanum wheels in Gazebo with spherical collisions it
+  requires a custom friction model so the vehicle can strafe left to right -->
+  <gazebo reference='front_left_wheel'>
+    <collision>
+      <surface>
+        <friction>
+          <ode>
+            <mu>0</mu>
+            <mu2>0</mu2>
+            <fdir1 ignition:expressed_in="base_link">1.0 1.0 0.0</fdir1>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+  </gazebo>
+  <gazebo reference='front_right_wheel'>
+    <collision>
+      <surface>
+        <friction>
+          <ode>
+            <mu>0</mu>
+            <mu2>0</mu2>
+            <fdir1 ignition:expressed_in="base_link">1.0 -1.0 0.0</fdir1>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+  </gazebo>
+  <gazebo reference='rear_left_wheel'>
+    <collision>
+      <surface>
+        <friction>
+          <ode>
+            <mu>0</mu>
+            <mu2>0</mu2>
+            <fdir1 ignition:expressed_in="base_link">1.0 -1.0 0.0</fdir1>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+  </gazebo>
+  <gazebo reference='rear_right_wheel'>
+    <collision>
+      <surface>
+        <friction>
+          <ode>
+            <mu>0</mu>
+            <mu2>0</mu2>
+            <fdir1 ignition:expressed_in="base_link">1.0 1.0 0.0</fdir1>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+  </gazebo>
 
   <ros2_control name="GazeboSystem" type="system">
     <hardware>
@@ -111,6 +168,7 @@
       name="gz_ros2_control::GazeboSimROS2ControlPlugin">
 
       <parameters>$(arg controllers_file)</parameters>
+      <ros> <remapping>/mecanum_drive_controller/reference:=/cmd_vel</remapping> </ros>
     </plugin>
       
 </gazebo>
