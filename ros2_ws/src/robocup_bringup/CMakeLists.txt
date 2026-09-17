@@ -25,7 +25,7 @@ endif()
 
 
 install(
-  DIRECTORY launch config
+  DIRECTORY launch config worlds
   DESTINATION share/${PROJECT_NAME}
 )
 ament_package()

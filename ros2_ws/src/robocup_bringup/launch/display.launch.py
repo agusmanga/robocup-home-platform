@@ -18,6 +18,12 @@ def generate_launch_description():
         'config',
         'gazebo_hardware_controllers.yaml'
     )
+
+    world_file = os.path.join(
+        bringup_pkg,
+        'worlds',
+        'robocup_world.sdf'
+    )
     
 
     xacro_file = description_pkg + '/urdf/robot.urdf.xacro'
@@ -30,7 +36,7 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             os.path.join(ros_gz_sim_pkg, 'launch', 'gz_sim.launch.py')
         ),
-        launch_arguments={'gz_args': '-r empty.sdf'}.items()
+        launch_arguments={'gz_args': f'-r {world_file}'}.items()
     )
 
     rviz = Node(
@@ -38,6 +44,7 @@ def generate_launch_description():
         executable='rviz2',
         name='rviz2',
         arguments=['-d', description_pkg + '/rviz/robocup.rviz'],
+        parameters=[{'use_sim_time': True}],
         output='screen'
     )
     robot_state_publisher = Node(
@@ -53,7 +60,7 @@ def generate_launch_description():
         arguments=['mecanum_drive_controller',
             '--param-file',
             controllers_file,
-        ]
+        ],
     )
 
     joint_state_broadcaster_spawner = Node(
@@ -61,6 +68,18 @@ def generate_launch_description():
     executable="spawner",
     arguments=["joint_state_broadcaster"],
 )
+
+    bridge = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        parameters=[{
+            'config_file': os.path.join(bringup_pkg, 'config', 'ros_gz_bridge.yaml'),
+        }],
+        output='screen'
+    )
+
+
+
     robot = Node(
         package='ros_gz_sim',
         executable='create',
@@ -73,4 +92,4 @@ def generate_launch_description():
         ]
     )
     
-    return LaunchDescription([rviz, gazebo, robot_state_publisher, robot,wheel_controller_spawner,joint_state_broadcaster_spawner])
+    return LaunchDescription([rviz,bridge, gazebo, robot_state_publisher, robot,wheel_controller_spawner,joint_state_broadcaster_spawner])

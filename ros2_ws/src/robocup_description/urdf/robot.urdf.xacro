@@ -78,6 +78,71 @@
   <xacro:wheel name="front_right_wheel" parent="base_link" origin="0.275 -0.265 -0.07"/>
 
 
+  <joint name="sensor_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="sensor_link"/>
+    <origin xyz="0.3 0 0.125" rpy="0.0 0.0 0.0"/>
+  </joint>
+
+  <link name="sensor_link">
+    <visual >
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.1 0.005 0.005"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.1 0.005 0.005"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.1"/> <!-- Obligatorio para que Gazebo procese el sensor -->
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia
+        ixx="0.00004" ixy="0" ixz="0"
+        iyy="0.00004" iyz="0"
+        izz="0.00004"/>  
+    </inertial>
+  </link>
+
+  <gazebo reference='sensor_link'>
+    <sensor name='gpu_lidar' type='gpu_lidar'>
+          <pose>0 0 0 0 0 0</pose>
+          <topic>scan</topic>
+           <ignition_frame_id>sensor_link</ignition_frame_id>
+          <update_rate>10</update_rate>
+          <lidar>
+            <scan>
+              <horizontal>
+                <samples>640</samples>
+                <resolution>1</resolution>
+                <min_angle>-1.396263</min_angle>
+                <max_angle>1.396263</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0.0</min_angle>
+                <max_angle>0.0</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.08</min>
+              <max>10.0</max>
+              <resolution>0.01</resolution>
+            </range>
+          </lidar>
+          <visualize>true</visualize>
+        </sensor>
+      </gazebo>
+
+
+
 
   <!-- To emulate Mecanum wheels in Gazebo with spherical collisions it
   requires a custom friction model so the vehicle can strafe left to right -->
@@ -168,7 +233,11 @@
       name="gz_ros2_control::GazeboSimROS2ControlPlugin">
 
       <parameters>$(arg controllers_file)</parameters>
-      <ros> <remapping>/mecanum_drive_controller/reference:=/cmd_vel</remapping> </ros>
+      <ros> 
+        <remapping>/mecanum_drive_controller/reference:=/cmd_vel</remapping> 
+        <remapping>/mecanum_drive_controller/odometry:=/odom</remapping>
+        <remapping>/mecanum_drive_controller/tf_odometry:=/tf</remapping>
+      </ros>
     </plugin>
       
 </gazebo>
