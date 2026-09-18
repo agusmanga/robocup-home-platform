@@ -234,7 +234,7 @@
 
       <parameters>$(arg controllers_file)</parameters>
       <ros> 
-        <remapping>/mecanum_drive_controller/reference:=/cmd_vel</remapping> 
+        <remapping>/mecanum_drive_controller/reference_unstamped:=/cmd_vel</remapping> 
         <remapping>/mecanum_drive_controller/odometry:=/odom</remapping>
         <remapping>/mecanum_drive_controller/tf_odometry:=/tf</remapping>
       </ros>

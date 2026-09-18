@@ -22,4 +22,5 @@ mecanum_drive_controller:
         base_frame_offset: { x: 0.0, y: 0.0, theta: 0.0 }
         wheels_radius: 0.075
         sum_of_robot_center_projection_on_X_Y_axis: 0.54
+    use_stamped_vel: False
    
