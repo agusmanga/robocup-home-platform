@@ -22,7 +22,7 @@ def generate_launch_description():
     world_file = os.path.join(
         bringup_pkg,
         'worlds',
-        'robocup_world.sdf'
+        'inco.world.sdf'
     )
     
 
