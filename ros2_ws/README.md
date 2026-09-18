@@ -41,19 +41,19 @@ Contendrá la interfaz de hardware de `ros2_control` encargada de comunicarse co
 
 ## Requisitos
 
-El proyecto utiliza **ROS 2 Humble**.
+El proyecto utiliza **ROS 2 Humble** sobre Ubuntu 22.04.
 
-Algunos de los paquetes necesarios actualmente son:
+Se asume que ROS 2 Humble ya está instalado.
+
+Las dependencias del workspace se instalan mediante `rosdep`:
 
 ```bash
 sudo apt update
+sudo rosdep init   # solo la primera vez
+rosdep update
 
-sudo apt install \
-  ros-humble-xacro \
-  ros-humble-rviz2 \
-  ros-humble-ros2-control \
-  ros-humble-ros2-controllers
-```
+cd ros2_ws
+rosdep install --from-paths src --ignore-src -r -y
 
 ---
 
