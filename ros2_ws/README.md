@@ -45,6 +45,11 @@ El proyecto utiliza **ROS 2 Humble** sobre Ubuntu 22.04.
 
 Se asume que ROS 2 Humble ya está instalado.
 
+Primero cargar ROS 2 Humble:
+
+```bash
+source /opt/ros/humble/setup.bash
+
 Las dependencias del workspace se instalan mediante `rosdep`:
 
 ```bash
