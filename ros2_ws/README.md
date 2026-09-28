@@ -47,6 +47,11 @@ Se asume que ROS 2 Humble ya está instalado.
 
 Primero cargar ROS 2 Humble:
 
+Instalar las herramientas necesarias para gestionar dependencias y compilar el workspace:
+
+```bash
+sudo apt install python3-colcon-common-extensions python3-rosdep
+
 ```bash
 source /opt/ros/humble/setup.bash
 
