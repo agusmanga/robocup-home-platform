@@ -6,6 +6,8 @@ from launch_ros.actions import Node
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 import xacro
+from launch.actions import RegisterEventHandler
+from launch.event_handlers import OnProcessExit
 
 def generate_launch_description():
     description_pkg = get_package_share_directory('robocup_description')
@@ -60,7 +62,8 @@ def generate_launch_description():
         executable='robot_state_publisher',
         name='robot_state_publisher',
         output='screen',
-            parameters=[{'robot_description': robot_description}]
+            parameters=[{'robot_description': robot_description}, 
+                        {'use_sim_time': True}]
         )
     wheel_controller_spawner = Node(
         package="controller_manager",
@@ -115,7 +118,6 @@ def generate_launch_description():
         }.items()
     )
 
-
     robot = Node(
         package='ros_gz_sim',
         executable='create',
@@ -127,5 +129,23 @@ def generate_launch_description():
             '-z', '0.2'
         ]
     )
+
+
+    start_controllers_after_robot = RegisterEventHandler(
+        OnProcessExit(
+            target_action=robot,
+            on_exit=[
+                joint_state_broadcaster_spawner,
+                wheel_controller_spawner,
+            ],
+        )
+    )
     
-    return LaunchDescription([rviz,bridge, gazebo, robot_state_publisher, robot,wheel_controller_spawner,joint_state_broadcaster_spawner,slam,nav2])
+    return LaunchDescription([ gazebo,
+        robot_state_publisher,
+        bridge,
+        robot,
+        start_controllers_after_robot,
+        rviz,
+        slam,
+        nav2])
