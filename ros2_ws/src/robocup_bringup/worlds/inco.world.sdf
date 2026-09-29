@@ -15,8 +15,8 @@
       <direction>0.5 0.1 -0.9</direction>
     </light>
     <scene>
-      <ambient>0.4 0.4 0.4 1</ambient>
-      <background>0.7 0.7 0.7 1</background>
+      <ambient>0.55 0.58 0.62 1</ambient>
+      <background>0.72 0.80 0.88 1</background>
       <shadows>1</shadows>
     </scene>
     <physics name='default_physics' default='0' type='ode'>
@@ -79,7 +79,10 @@
             </plane>
           </geometry>
           <material>
-            
+            <ambient>0.24 0.27 0.30 1</ambient>
+            <diffuse>0.38 0.42 0.45 1</diffuse>
+            <specular>0.08 0.08 0.08 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
         <velocity_decay>
@@ -1247,11 +1250,10 @@
               <size>1 0.233333 0.166667</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.20 0.25 0.29 1</ambient>
+            <diffuse>0.32 0.39 0.44 1</diffuse>
+            <specular>0.12 0.12 0.12 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -1264,11 +1266,10 @@
               <size>1 0.233333 0.166667</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.20 0.25 0.29 1</ambient>
+            <diffuse>0.32 0.39 0.44 1</diffuse>
+            <specular>0.12 0.12 0.12 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -1281,11 +1282,10 @@
               <size>1 0.233333 0.166667</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.20 0.25 0.29 1</ambient>
+            <diffuse>0.32 0.39 0.44 1</diffuse>
+            <specular>0.12 0.12 0.12 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -1298,11 +1298,10 @@
               <size>1 0.233333 0.166667</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.20 0.25 0.29 1</ambient>
+            <diffuse>0.32 0.39 0.44 1</diffuse>
+            <specular>0.12 0.12 0.12 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -1315,11 +1314,10 @@
               <size>1 0.233333 0.166667</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.20 0.25 0.29 1</ambient>
+            <diffuse>0.32 0.39 0.44 1</diffuse>
+            <specular>0.12 0.12 0.12 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -1332,11 +1330,10 @@
               <size>1 0.233333 0.166667</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.20 0.25 0.29 1</ambient>
+            <diffuse>0.32 0.39 0.44 1</diffuse>
+            <specular>0.12 0.12 0.12 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -1349,11 +1346,10 @@
               <size>1 0.233333 0.166667</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.20 0.25 0.29 1</ambient>
+            <diffuse>0.32 0.39 0.44 1</diffuse>
+            <specular>0.12 0.12 0.12 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -1366,11 +1362,10 @@
               <size>1 0.233333 0.166667</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.20 0.25 0.29 1</ambient>
+            <diffuse>0.32 0.39 0.44 1</diffuse>
+            <specular>0.12 0.12 0.12 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -1383,11 +1378,10 @@
               <size>1 0.233333 0.166667</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.20 0.25 0.29 1</ambient>
+            <diffuse>0.32 0.39 0.44 1</diffuse>
+            <specular>0.12 0.12 0.12 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -1400,11 +1394,10 @@
               <size>1 0.233333 0.166667</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.20 0.25 0.29 1</ambient>
+            <diffuse>0.32 0.39 0.44 1</diffuse>
+            <specular>0.12 0.12 0.12 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -1417,11 +1410,10 @@
               <size>1 0.233333 0.166667</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.20 0.25 0.29 1</ambient>
+            <diffuse>0.32 0.39 0.44 1</diffuse>
+            <specular>0.12 0.12 0.12 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -1434,11 +1426,10 @@
               <size>1 0.233333 0.166667</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.20 0.25 0.29 1</ambient>
+            <diffuse>0.32 0.39 0.44 1</diffuse>
+            <specular>0.12 0.12 0.12 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -1451,11 +1442,10 @@
               <size>1 0.233333 0.166667</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.20 0.25 0.29 1</ambient>
+            <diffuse>0.32 0.39 0.44 1</diffuse>
+            <specular>0.12 0.12 0.12 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -1468,11 +1458,10 @@
               <size>1 0.233333 0.166667</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.20 0.25 0.29 1</ambient>
+            <diffuse>0.32 0.39 0.44 1</diffuse>
+            <specular>0.12 0.12 0.12 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -1485,11 +1474,10 @@
               <size>1 0.233333 0.166667</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.20 0.25 0.29 1</ambient>
+            <diffuse>0.32 0.39 0.44 1</diffuse>
+            <specular>0.12 0.12 0.12 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -2333,11 +2321,10 @@
               <size>1.48163 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -2411,11 +2398,10 @@
               <size>1.5 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -2489,11 +2475,10 @@
               <size>1.75 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -2567,11 +2552,10 @@
               <size>1.12508 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -2645,11 +2629,10 @@
               <size>5 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -2723,11 +2706,10 @@
               <size>2.84815 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -2801,11 +2783,10 @@
               <size>5.75 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -2879,11 +2860,10 @@
               <size>5.02034 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -2957,11 +2937,10 @@
               <size>5.5 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -3035,11 +3014,10 @@
               <size>5 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -3113,11 +3091,10 @@
               <size>2.50008 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -3191,11 +3168,10 @@
               <size>1.55664 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -3269,11 +3245,10 @@
               <size>1.51786 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -3347,11 +3322,10 @@
               <size>1.5 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -3425,11 +3399,10 @@
               <size>5.25 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -3503,11 +3476,10 @@
               <size>1.52088 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -3581,11 +3553,10 @@
               <size>6.39747 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -3659,11 +3630,10 @@
               <size>2 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -3737,11 +3707,10 @@
               <size>0.4 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -3815,11 +3784,10 @@
               <size>8 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -3893,11 +3861,10 @@
               <size>1.25 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -3971,11 +3938,10 @@
               <size>4.5 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -4049,11 +4015,10 @@
               <size>4.25 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -4127,11 +4092,10 @@
               <size>4.5 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -4205,11 +4169,10 @@
               <size>4.5 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -4283,11 +4246,10 @@
               <size>6 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -4361,11 +4323,10 @@
               <size>5 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -4439,11 +4400,10 @@
               <size>1.5 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -4517,11 +4477,10 @@
               <size>6.00254 0.15 2.5</size>
             </box>
           </geometry>
-          <material>
-            
-            <ambient>1 1 1 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
+                              <material>
+            <ambient>0.72 0.70 0.65 1</ambient>
+            <diffuse>0.91 0.88 0.80 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -4623,7 +4582,10 @@
             </box>
           </geometry>
           <material>
-            
+            <ambient>0.25 0.11 0.045 1</ambient>
+            <diffuse>0.55 0.28 0.10 1</diffuse>
+            <specular>0.10 0.08 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
         <collision name='left_side'>
@@ -4655,7 +4617,10 @@
             </box>
           </geometry>
           <material>
-            
+            <ambient>0.25 0.11 0.045 1</ambient>
+            <diffuse>0.55 0.28 0.10 1</diffuse>
+            <specular>0.10 0.08 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
         <collision name='right_side'>
@@ -4687,7 +4652,10 @@
             </box>
           </geometry>
           <material>
-            
+            <ambient>0.25 0.11 0.045 1</ambient>
+            <diffuse>0.55 0.28 0.10 1</diffuse>
+            <specular>0.10 0.08 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
         <collision name='bottom'>
@@ -4719,7 +4687,10 @@
             </box>
           </geometry>
           <material>
-            
+            <ambient>0.25 0.11 0.045 1</ambient>
+            <diffuse>0.55 0.28 0.10 1</diffuse>
+            <specular>0.10 0.08 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
         <collision name='top'>
@@ -4751,7 +4722,10 @@
             </box>
           </geometry>
           <material>
-            
+            <ambient>0.25 0.11 0.045 1</ambient>
+            <diffuse>0.55 0.28 0.10 1</diffuse>
+            <specular>0.10 0.08 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
         <collision name='low_shelf'>
@@ -4783,7 +4757,10 @@
             </box>
           </geometry>
           <material>
-            
+            <ambient>0.25 0.11 0.045 1</ambient>
+            <diffuse>0.55 0.28 0.10 1</diffuse>
+            <specular>0.10 0.08 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
         <collision name='high_shelf'>
@@ -4815,7 +4792,10 @@
             </box>
           </geometry>
           <material>
-            
+            <ambient>0.25 0.11 0.045 1</ambient>
+            <diffuse>0.55 0.28 0.10 1</diffuse>
+            <specular>0.10 0.08 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
         <self_collide>0</self_collide>
@@ -4859,7 +4839,10 @@
             </box>
           </geometry>
           <material>
-            
+            <ambient>0.25 0.11 0.045 1</ambient>
+            <diffuse>0.55 0.28 0.10 1</diffuse>
+            <specular>0.10 0.08 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
         <collision name='left_side'>
@@ -4891,7 +4874,10 @@
             </box>
           </geometry>
           <material>
-            
+            <ambient>0.25 0.11 0.045 1</ambient>
+            <diffuse>0.55 0.28 0.10 1</diffuse>
+            <specular>0.10 0.08 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
         <collision name='right_side'>
@@ -4923,7 +4909,10 @@
             </box>
           </geometry>
           <material>
-            
+            <ambient>0.25 0.11 0.045 1</ambient>
+            <diffuse>0.55 0.28 0.10 1</diffuse>
+            <specular>0.10 0.08 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
         <collision name='bottom'>
@@ -4955,7 +4944,10 @@
             </box>
           </geometry>
           <material>
-            
+            <ambient>0.25 0.11 0.045 1</ambient>
+            <diffuse>0.55 0.28 0.10 1</diffuse>
+            <specular>0.10 0.08 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
         <collision name='top'>
@@ -4987,7 +4979,10 @@
             </box>
           </geometry>
           <material>
-            
+            <ambient>0.25 0.11 0.045 1</ambient>
+            <diffuse>0.55 0.28 0.10 1</diffuse>
+            <specular>0.10 0.08 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
         <collision name='low_shelf'>
@@ -5019,7 +5014,10 @@
             </box>
           </geometry>
           <material>
-            
+            <ambient>0.25 0.11 0.045 1</ambient>
+            <diffuse>0.55 0.28 0.10 1</diffuse>
+            <specular>0.10 0.08 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
         <collision name='high_shelf'>
@@ -5051,7 +5049,10 @@
             </box>
           </geometry>
           <material>
-            
+            <ambient>0.25 0.11 0.045 1</ambient>
+            <diffuse>0.55 0.28 0.10 1</diffuse>
+            <specular>0.10 0.08 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
         <self_collide>0</self_collide>
@@ -5095,7 +5096,10 @@
             </box>
           </geometry>
           <material>
-            
+            <ambient>0.25 0.11 0.045 1</ambient>
+            <diffuse>0.55 0.28 0.10 1</diffuse>
+            <specular>0.10 0.08 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
         <collision name='left_side'>
@@ -5127,7 +5131,10 @@
             </box>
           </geometry>
           <material>
-            
+            <ambient>0.25 0.11 0.045 1</ambient>
+            <diffuse>0.55 0.28 0.10 1</diffuse>
+            <specular>0.10 0.08 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
         <collision name='right_side'>
@@ -5159,7 +5166,10 @@
             </box>
           </geometry>
           <material>
-            
+            <ambient>0.25 0.11 0.045 1</ambient>
+            <diffuse>0.55 0.28 0.10 1</diffuse>
+            <specular>0.10 0.08 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
         <collision name='bottom'>
@@ -5191,7 +5201,10 @@
             </box>
           </geometry>
           <material>
-            
+            <ambient>0.25 0.11 0.045 1</ambient>
+            <diffuse>0.55 0.28 0.10 1</diffuse>
+            <specular>0.10 0.08 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
         <collision name='top'>
@@ -5223,7 +5236,10 @@
             </box>
           </geometry>
           <material>
-            
+            <ambient>0.25 0.11 0.045 1</ambient>
+            <diffuse>0.55 0.28 0.10 1</diffuse>
+            <specular>0.10 0.08 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
         <collision name='low_shelf'>
@@ -5255,7 +5271,10 @@
             </box>
           </geometry>
           <material>
-            
+            <ambient>0.25 0.11 0.045 1</ambient>
+            <diffuse>0.55 0.28 0.10 1</diffuse>
+            <specular>0.10 0.08 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
         <collision name='high_shelf'>
@@ -5287,7 +5306,10 @@
             </box>
           </geometry>
           <material>
-            
+            <ambient>0.25 0.11 0.045 1</ambient>
+            <diffuse>0.55 0.28 0.10 1</diffuse>
+            <specular>0.10 0.08 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
           </material>
         </visual>
         <self_collide>0</self_collide>
@@ -5362,6 +5384,36 @@
             </friction>
           </surface>
         </collision>
+        <visual name='styled_surface'>
+          <pose>0 0 0.755 0 0 0</pose>
+          <geometry><box><size>0.913 0.913 0.04</size></box></geometry>
+          <material>
+            <ambient>0.26 0.12 0.05 1</ambient>
+            <diffuse>0.62 0.34 0.14 1</diffuse>
+            <specular>0.12 0.09 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <visual name='styled_column'>
+          <pose>0 0 0.37 0 0 0</pose>
+          <geometry><box><size>0.042 0.042 0.74</size></box></geometry>
+          <material>
+            <ambient>0.08 0.09 0.10 1</ambient>
+            <diffuse>0.16 0.18 0.20 1</diffuse>
+            <specular>0.35 0.35 0.35 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <visual name='styled_base'>
+          <pose>0 0 0.02 0 0 0</pose>
+          <geometry><box><size>0.56 0.56 0.04</size></box></geometry>
+          <material>
+            <ambient>0.08 0.09 0.10 1</ambient>
+            <diffuse>0.16 0.18 0.20 1</diffuse>
+            <specular>0.35 0.35 0.35 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <gravity>1</gravity>
@@ -5434,6 +5486,36 @@
             </friction>
           </surface>
         </collision>
+        <visual name='styled_surface'>
+          <pose>0 0 0.755 0 0 0</pose>
+          <geometry><box><size>0.913 0.913 0.04</size></box></geometry>
+          <material>
+            <ambient>0.26 0.12 0.05 1</ambient>
+            <diffuse>0.62 0.34 0.14 1</diffuse>
+            <specular>0.12 0.09 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <visual name='styled_column'>
+          <pose>0 0 0.37 0 0 0</pose>
+          <geometry><box><size>0.042 0.042 0.74</size></box></geometry>
+          <material>
+            <ambient>0.08 0.09 0.10 1</ambient>
+            <diffuse>0.16 0.18 0.20 1</diffuse>
+            <specular>0.35 0.35 0.35 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <visual name='styled_base'>
+          <pose>0 0 0.02 0 0 0</pose>
+          <geometry><box><size>0.56 0.56 0.04</size></box></geometry>
+          <material>
+            <ambient>0.08 0.09 0.10 1</ambient>
+            <diffuse>0.16 0.18 0.20 1</diffuse>
+            <specular>0.35 0.35 0.35 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <gravity>1</gravity>
@@ -5506,6 +5588,36 @@
             </friction>
           </surface>
         </collision>
+        <visual name='styled_surface'>
+          <pose>0 0 0.755 0 0 0</pose>
+          <geometry><box><size>0.913 0.913 0.04</size></box></geometry>
+          <material>
+            <ambient>0.26 0.12 0.05 1</ambient>
+            <diffuse>0.62 0.34 0.14 1</diffuse>
+            <specular>0.12 0.09 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <visual name='styled_column'>
+          <pose>0 0 0.37 0 0 0</pose>
+          <geometry><box><size>0.042 0.042 0.74</size></box></geometry>
+          <material>
+            <ambient>0.08 0.09 0.10 1</ambient>
+            <diffuse>0.16 0.18 0.20 1</diffuse>
+            <specular>0.35 0.35 0.35 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <visual name='styled_base'>
+          <pose>0 0 0.02 0 0 0</pose>
+          <geometry><box><size>0.56 0.56 0.04</size></box></geometry>
+          <material>
+            <ambient>0.08 0.09 0.10 1</ambient>
+            <diffuse>0.16 0.18 0.20 1</diffuse>
+            <specular>0.35 0.35 0.35 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <gravity>1</gravity>
@@ -5578,6 +5690,36 @@
             </friction>
           </surface>
         </collision>
+        <visual name='styled_surface'>
+          <pose>0 0 0.755 0 0 0</pose>
+          <geometry><box><size>0.913 0.913 0.04</size></box></geometry>
+          <material>
+            <ambient>0.26 0.12 0.05 1</ambient>
+            <diffuse>0.62 0.34 0.14 1</diffuse>
+            <specular>0.12 0.09 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <visual name='styled_column'>
+          <pose>0 0 0.37 0 0 0</pose>
+          <geometry><box><size>0.042 0.042 0.74</size></box></geometry>
+          <material>
+            <ambient>0.08 0.09 0.10 1</ambient>
+            <diffuse>0.16 0.18 0.20 1</diffuse>
+            <specular>0.35 0.35 0.35 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <visual name='styled_base'>
+          <pose>0 0 0.02 0 0 0</pose>
+          <geometry><box><size>0.56 0.56 0.04</size></box></geometry>
+          <material>
+            <ambient>0.08 0.09 0.10 1</ambient>
+            <diffuse>0.16 0.18 0.20 1</diffuse>
+            <specular>0.35 0.35 0.35 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <gravity>1</gravity>
@@ -5650,6 +5792,36 @@
             </friction>
           </surface>
         </collision>
+        <visual name='styled_surface'>
+          <pose>0 0 0.755 0 0 0</pose>
+          <geometry><box><size>0.913 0.913 0.04</size></box></geometry>
+          <material>
+            <ambient>0.26 0.12 0.05 1</ambient>
+            <diffuse>0.62 0.34 0.14 1</diffuse>
+            <specular>0.12 0.09 0.06 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <visual name='styled_column'>
+          <pose>0 0 0.37 0 0 0</pose>
+          <geometry><box><size>0.042 0.042 0.74</size></box></geometry>
+          <material>
+            <ambient>0.08 0.09 0.10 1</ambient>
+            <diffuse>0.16 0.18 0.20 1</diffuse>
+            <specular>0.35 0.35 0.35 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+        <visual name='styled_base'>
+          <pose>0 0 0.02 0 0 0</pose>
+          <geometry><box><size>0.56 0.56 0.04</size></box></geometry>
+          <material>
+            <ambient>0.08 0.09 0.10 1</ambient>
+            <diffuse>0.16 0.18 0.20 1</diffuse>
+            <specular>0.35 0.35 0.35 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <gravity>1</gravity>

@@ -14,6 +14,7 @@
       <geometry>
         <box size="0.6 0.48 0.2"/>
       </geometry>
+      <material name="body_teal"><color rgba="0.04 0.42 0.48 1"/></material>
     </visual>
 
     <collision>
@@ -39,8 +40,8 @@
         <geometry>
           <cylinder radius="0.075" length="0.05"/>
         </geometry>
-        <material name="white">
-          <color rgba="1 1 1 1"/>
+        <material name="wheel_rubber">
+          <color rgba="0.055 0.065 0.075 1"/>
         </material>
       </visual>
       <collision>
@@ -91,7 +92,7 @@
         <box size="0.1 0.005 0.005"/>
       </geometry>
       <material name="white">
-        <color rgba="1.0 0.0 0.0 1.0"/>
+        <color rgba="0.96 0.64 0.12 1.0"/>
       </material>
     </visual>
     <collision>
