@@ -12,6 +12,14 @@ def generate_launch_description():
 
     ros_gz_sim_pkg = get_package_share_directory('ros_gz_sim')
     bringup_pkg = get_package_share_directory('robocup_bringup')
+    slam_toolbox_pkg = get_package_share_directory('slam_toolbox')
+    nav2_bringup_pkg = get_package_share_directory('nav2_bringup')
+    
+    nav2_params_file = os.path.join(
+        bringup_pkg,
+        'config',
+        'nav2_params.yaml'
+    )
 
     controllers_file = os.path.join(
         bringup_pkg,
@@ -80,6 +88,34 @@ def generate_launch_description():
 
 
 
+    slam = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(
+                slam_toolbox_pkg,
+                'launch',
+                'online_async_launch.py'
+            )
+        ),
+        launch_arguments={
+            'use_sim_time': 'true'
+        }.items()
+    )
+
+    nav2 = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(
+                nav2_bringup_pkg,
+                'launch',
+                'navigation_launch.py'
+            )
+        ),
+        launch_arguments={
+            'params_file': nav2_params_file,
+            'use_sim_time': 'true',
+        }.items()
+    )
+
+
     robot = Node(
         package='ros_gz_sim',
         executable='create',
@@ -92,4 +128,4 @@ def generate_launch_description():
         ]
     )
     
-    return LaunchDescription([rviz,bridge, gazebo, robot_state_publisher, robot,wheel_controller_spawner,joint_state_broadcaster_spawner])
+    return LaunchDescription([rviz,bridge, gazebo, robot_state_publisher, robot,wheel_controller_spawner,joint_state_broadcaster_spawner,slam,nav2])
