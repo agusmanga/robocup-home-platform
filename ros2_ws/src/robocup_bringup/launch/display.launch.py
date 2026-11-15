@@ -8,6 +8,8 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 import xacro
 from launch.actions import RegisterEventHandler
 from launch.event_handlers import OnProcessExit
+from launch.actions import GroupAction
+from launch_ros.actions import SetParameter
 
 def generate_launch_description():
     description_pkg = get_package_share_directory('robocup_description')
@@ -130,6 +132,20 @@ def generate_launch_description():
         ]
     )
 
+    lidar_launch = GroupAction([
+        SetParameter(name='use_sim_time', value=True),
+
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(
+                os.path.join(
+                    get_package_share_directory('sllidar_ros2'),
+                    'launch',
+                    'sllidar_c1_launch.py'
+                )
+            )
+        )
+    ])
+
 
     start_controllers_after_robot = RegisterEventHandler(
         OnProcessExit(
@@ -148,4 +164,5 @@ def generate_launch_description():
         start_controllers_after_robot,
         rviz,
         slam,
-        nav2])
+        nav2
+        ])
