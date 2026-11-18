@@ -265,22 +265,27 @@ return_type ODriveHardwareInterface::write(const rclcpp::Time &,
                                            const rclcpp::Duration &) {
   for (auto &axis : axes_) {
     // Send the CAN message that fits the set of enabled setpoints
+
+    // Invertir motores izquierdos (node_id 1 y 3)
+    const float direction = (axis.node_id_ % 2 != 0) ? -1.0f : 1.0f;
+
     if (axis.pos_input_enabled_) {
       Set_Input_Pos_msg_t msg;
       msg.Input_Pos = axis.pos_setpoint_ / (2 * M_PI);
-      msg.Vel_FF =
-          axis.vel_input_enabled_ ? (axis.vel_setpoint_ / (2 * M_PI)) : 0.0f;
+      msg.Vel_FF = axis.vel_input_enabled_
+                       ? direction * (axis.vel_setpoint_ / (2 * M_PI))
+                       : 0.0f;
       msg.Torque_FF = axis.torque_input_enabled_ ? axis.torque_setpoint_ : 0.0f;
       axis.send(msg);
     } else if (axis.vel_input_enabled_) {
       Set_Input_Vel_msg_t msg;
-      msg.Input_Vel = axis.vel_setpoint_ / (2 * M_PI);
+      msg.Input_Vel = direction * axis.vel_setpoint_ / (2 * M_PI);
       msg.Input_Torque_FF =
           axis.torque_input_enabled_ ? axis.torque_setpoint_ : 0.0f;
       axis.send(msg);
     } else if (axis.torque_input_enabled_) {
       Set_Input_Torque_msg_t msg;
-      msg.Input_Torque = axis.torque_setpoint_;
+      msg.Input_Torque = direction * axis.torque_setpoint_;
       axis.send(msg);
     } else {
       // no control enabled - don't send any setpoint

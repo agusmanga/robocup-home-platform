@@ -18,7 +18,7 @@ def generate_launch_description():
     urdf_path = os.path.join(
         description_pkg,
         'urdf',
-        'odrive_test.urdf.xacro'
+        'odrive.urdf.xacro'
     )
 
     controllers_path = os.path.join(
