@@ -445,6 +445,8 @@ para la integración del sensor RPLIDAR C1.
 Este paquete es una dependencia externa y no se incluye
 directamente en el repositorio.
 
+Si se integra, es necesario agregar 'lidar_launch' a la Launch Description en display.launch.py
+
 Para instalarlo, desde el workspace:
 
 ```bash
