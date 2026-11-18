@@ -437,6 +437,30 @@ ros2 launch robocup_bringup display.launch.py
 
 ---
 
+### Instalación del driver RPLIDAR
+
+El proyecto integró opcionalmente el paquete `sllidar_ros2` de SLAMTEC
+para la integración del sensor RPLIDAR C1.
+
+Este paquete es una dependencia externa y no se incluye
+directamente en el repositorio.
+
+Para instalarlo, desde el workspace:
+
+```bash
+cd ~/robocup-home-platform/ros2_ws/src
+
+git clone https://github.com/Slamtec/sllidar_ros2.git
+
+cd ~/robocup-home-platform/ros2_ws
+
+colcon build --symlink-install
+
+source install/setup.bash
+```
+
+---
+
 ## Referencias
 
 - [ROS 2 Humble](https://docs.ros.org/en/humble/)
