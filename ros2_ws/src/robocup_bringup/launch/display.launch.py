@@ -131,20 +131,22 @@ def generate_launch_description():
             '-z', '0.2'
         ]
     )
+    # En caso de integrar el sensor lidar de SlamTec, clonar el repositorio dentro de /src y descomentar
+    # Mas informacion en el README
+    
+    # lidar_launch = GroupAction([
+    #     SetParameter(name='use_sim_time', value=True),
 
-    lidar_launch = GroupAction([
-        SetParameter(name='use_sim_time', value=True),
-
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(
-                os.path.join(
-                    get_package_share_directory('sllidar_ros2'),
-                    'launch',
-                    'sllidar_c1_launch.py'
-                )
-            )
-        )
-    ])
+    #     IncludeLaunchDescription(
+    #         PythonLaunchDescriptionSource(
+    #             os.path.join(
+    #                 get_package_share_directory('sllidar_ros2'),
+    #                 'launch',
+    #                 'sllidar_c1_launch.py'
+    #             )
+    #         )
+    #     )
+    # ]) 
 
 
     start_controllers_after_robot = RegisterEventHandler(
